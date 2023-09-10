@@ -26,14 +26,6 @@ pub fn def() -> App<'static> {
                 .short('s'),
         )
         .arg(
-            Arg::with_name("limit")
-                .validator(args::validate_number)
-                .help("Max number of rows")
-                .default_value("500")
-                .long("limit")
-                .short('l'),
-        )
-        .arg(
             Arg::with_name("format")
                 .help("Output format")
                 .possible_values(OutputFormat::values())
@@ -54,14 +46,13 @@ pub fn run<W: Write>(matches: &ArgMatches, out: &mut W) -> Result<()> {
     let format = args::output_format_value(matches, "format")?;
     let columns = args::string_values(matches, "columns")?;
     let search = args::filter_values(matches, "search")?;
-    let limit = args::usize_value(matches, "limit")?;
     let path = args::path_value(matches, "path")?;
     let parquet = ParquetFile::from(path)
         .with_fields(columns)
         .with_filters(search);
 
     let headers = parquet.field_names()?;
-    let iter = parquet.iter().take(limit);
+    let iter = parquet.iter();
     let mut writer = OutputWriter::new(headers, iter).format(format);
 
     writer.write(out)
