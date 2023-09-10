@@ -1,8 +1,17 @@
-# xpq
+# xpq2
+
+xpq2 is a fork of xpq: https://github.com/FabioBatSilva/xpq
+
 xpq is a simple command line program for analyzing parquet files.
 
 ![Build Status](https://github.com/FabioBatSilva/xpq/workflows/ci/badge.svg?branch=master)
 
+## Fork
+
+xpq2 was forked so I could quickly try my patches to xpq.
+
+I have no intention of maintaining this fork. It might become stale, use xpq
+instead.
 
 ## Requirements
 - Rust nightly

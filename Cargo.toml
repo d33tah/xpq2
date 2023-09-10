@@ -1,12 +1,12 @@
 [package]
-name = "xpq"
-version = "0.2.1"
+name = "xpq2"
+version = "0.2.2"
 edition = "2018"
 authors = ["Fabio B. Silva <fabio.bat.silva@gmail.com>"]
 description = "Simple command line tool for analyzing parquet files"
-documentation = "https://github.com/FabioBatSilva/xpq"
-repository = "https://github.com/FabioBatSilva/xpq"
-homepage = "https://github.com/FabioBatSilva/xpq"
+documentation = "https://github.com/d33tah/xpq2"
+repository = "https://github.com/d33tah/xpq2"
+homepage = "https://github.com/d33tah/xpq2"
 categories = ["command-line-utilities", "parquet"]
 keywords = ["parquet", "cli", "command"]
 readme = "README.md"
