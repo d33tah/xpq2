@@ -126,7 +126,6 @@ fn write_csv<W: Write>(
     out: &mut W,
 ) -> Result<()> {
     let mut writer = csv::WriterBuilder::new()
-        .quote_style(csv::QuoteStyle::Never)
         .delimiter(b',')
         .from_writer(out);
 
